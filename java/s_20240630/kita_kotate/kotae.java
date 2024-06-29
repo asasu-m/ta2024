@@ -1,4 +1,4 @@
-package s_20240630.kita_kotate;
+package java.s_20240630.kita_kotate;
 /*
  * メソッド北ソフト工房問題6-6~6-8
  */
