@@ -8,7 +8,7 @@ package s_20240630;
 public class toi3 {
     public static void main(String[] args)
     {
-        Monster monster1 = new Monster(10,10,"スライム");
+        Monster monster1 = new Monster(10,10,"スライム");//クラスの生成(コンストラクタが呼ばれる)
         monster1.tojoMonster();
         Monster monster2 = new Monster(20,2,"ゴーレム");
         monster2.tojoMonster();
