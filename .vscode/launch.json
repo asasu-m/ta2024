@@ -1,0 +1,58 @@
+{
+    // IntelliSense を使用して利用可能な属性を学べます。
+    // 既存の属性の説明をホバーして表示します。
+    // 詳細情報は次を確認してください: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        
+
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "kotae",
+            "request": "launch",
+            "mainClass": "java.s_20240630.kita_kotae.kotae",
+            "projectName": "ta2024_dfd5994f"
+        },
+        {
+            "type": "java",
+            "name": "method_use",
+            "request": "launch",
+            "mainClass": "java.s_20240630.method_use",
+            "projectName": "ta2024_dfd5994f"
+        },
+        {
+            "type": "java",
+            "name": "toi",
+            "request": "launch",
+            "mainClass": "java.s_20240630.toi",
+            "projectName": "ta2024_dfd5994f"
+        },
+        {
+            "type": "java",
+            "name": "toi2",
+            "request": "launch",
+            "mainClass": "java.s_20240630.toi2",
+            "projectName": "ta2024_dfd5994f"
+        },
+        {
+            "type": "java",
+            "name": "toi3",
+            "request": "launch",
+            "mainClass": "java.s_20240630.toi3",
+            "projectName": "ta2024_dfd5994f"
+        },
+        {
+            "type": "java",
+            "name": "toi4",
+            "request": "launch",
+            "mainClass": "java.s_20240630.toi4",
+            "projectName": "ta2024_dfd5994f"
+        }
+    ]
+}
