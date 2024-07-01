@@ -1,4 +1,3 @@
-package java.s_20240630;
 
 /*
 メソッドについての説明、
@@ -11,7 +10,7 @@ package java.s_20240630;
 文字をゆっくり表示するにしても、その文字の内容を決めなければいけません。
 それをメソッドで引数としてゆっくり表示する文字を渡してあげて、表示します。
 */
-public class toi {
+public class how_to_method {
 
 	public static void main(String[] args) {
 		// TODO 自動生成されたメソッド・スタブ

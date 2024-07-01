@@ -1,6 +1,6 @@
-package java.s_20240630;
 
-public class toi4 {
+
+public class how_to_extends {
     public static void main(String[] args)
     {
         Hero hero = new Hero("Hayashi","戦士");  
@@ -28,6 +28,15 @@ class Human{
         return;
     }
 }
+/*
+ * extends 継承
+ * Humanクラスの変数とメソッドを持っている。(継承している)
+ * 人間の勇者を作成している。
+ * 勇者なので特別な職業を持っている
+ * @Overrideは親クラス(Human)のshowを上書き(Override)している。
+ * これを書くことによって、上書きしていることがわかり、逆に親クラスにないクラスをOverrideすると
+ * エラーを出してくれるため、上書きしていることをわかりやすくするためのもの
+ */
 class Hero extends Human{
     String Job;
     Hero(String Name,String Job){

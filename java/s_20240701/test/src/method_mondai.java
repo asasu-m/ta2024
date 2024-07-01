@@ -1,10 +1,10 @@
-package java.s_20240630;
+
 
 /*
  * メソッドの問題1,2,3
  */
 
-public class toi2 {
+public class method_mondai {
     private static final int TOI1=0;
     public static void main(String[] args)
     {

@@ -1,11 +1,10 @@
-package java.s_20240630;
 /*
  * クラスについて
  * クラスとはいわば設計図です。
  * どんなものをつくるかを骨組みを作ります。
  * ここではMonsterクラスを作ります。
  */
-public class toi3 {
+public class how_to_class {
     public static void main(String[] args)
     {
         Monster monster1 = new Monster(10,10,"スライム");//クラスの生成(コンストラクタが呼ばれる)

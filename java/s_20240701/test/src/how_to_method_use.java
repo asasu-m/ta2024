@@ -1,4 +1,3 @@
-package java.s_20240630;
 /*
  * メソッドのオーバーロード
  * 同じメソッド名で引数の数や種類が違うもので別々の処理が書けること。
@@ -6,7 +5,7 @@ package java.s_20240630;
  * この機能は一つのメソッド名で複数の型に対応できるメソッドを作ることができる。
  * (例えばSystem.out.println()これは引数に数字でもＯＫだし文字列でもＯＫ)
  */
-public class method_use {
+public class how_to_method_use {
     public static void main(String[] args)
     {
         System.out.println("戻り値void 引数なし文字表示");
