@@ -34,8 +34,11 @@ class Human{
  * 人間の勇者を作成している。
  * 勇者なので特別な職業を持っている
  * @Overrideは親クラス(Human)のshowを上書き(Override)している。
- * これを書くことによって、上書きしていることがわかり、逆に親クラスにないクラスをOverrideすると
+ * これを書くことによって、上書きしていることがわかり、逆に親クラスにないクラスを@Overrideすると
  * エラーを出してくれるため、上書きしていることをわかりやすくするためのもの
+ * super()は親クラスのこと
+ * ここではsuper(Name)=Human(String Name)→Humanのコンストラクタ(引数文字列一つ)
+ * super.show()=Human.show()→親クラス(Human)のshow()メソッドを呼び出している。
  */
 class Hero extends Human{
     String Job;
@@ -47,7 +50,17 @@ class Hero extends Human{
     @Override
     public void show()
     {
-        System.out.println("私の名前は"+this.Name+"です。職業は"+this.Job+"です");
+        /*
+         * 実行すると
+         * "私の名前は"+this.Name+"です"
+         * "職業は"+this.Job+"です"
+         * となる。
+         * super.show()に
+         * System.out.println("私の名前は"+this.Name+"です");
+         * が入る。
+         */
+        super.show();
+        System.out.println("職業は"+this.Job+"です");
         return;
     }
 
