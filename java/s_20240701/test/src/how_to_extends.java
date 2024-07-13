@@ -55,7 +55,7 @@ class Hero extends Human{
          * "私の名前は"+this.Name+"です"
          * "職業は"+this.Job+"です"
          * となる。
-         * super.show()に
+         * super.show()に、Humanクラスのshow()の中身、
          * System.out.println("私の名前は"+this.Name+"です");
          * が入る。
          */
