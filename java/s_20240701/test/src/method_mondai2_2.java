@@ -16,7 +16,7 @@ public class method_mondai2_2
     static int playerHP[];//味方の体力
     static int enemyHP[];//敵の体力
     static int enemy_shutugen_persent;//敵の出現確率(最低0-最高10)
-    static int playerXP[];
+    static int playerXP[];//勇者一行の経験値
     public static void main(String[] args)
     {
         summonPlayer();
