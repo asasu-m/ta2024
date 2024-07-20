@@ -1,6 +1,7 @@
+import java.util.Random;
 import java.util.Scanner;
 
-public class method_mondai2_1
+public class method_mondai2_2
 {
     //finalは変更できない値(定数)。値を変更しようとするとエラーになる
     //mainメソッドを含むクラスの変数やメソッドは基本staticをつける。(mainメソッドの中以外で作成したもの)
@@ -17,20 +18,55 @@ public class method_mondai2_1
         summonPlayer();
         summonEnemy();
         show();
+        field("平和な草原");
+
         return;
     }
+    /*
+     * バトルシーン
+     */
+    public static void battle()
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("モンスターが現れた!!");
+        while(true)
+        {
+            show();
+            System.out.print("1:攻撃. 2:逃げる");
+            int choice=sc.nextInt();
+            if(choice==1)
+            {
+                enemyshow();
+                System.out.println("どのモンスターに攻撃しますか？");
+                
+
+            }
+        }
+        
+
+    }
+    public static void enemyshow()
+    {
+        /*
+         * 以下のような出力にする(下のshow()メソッドを参考にしてください。
+         * モンスター1:「(モンスターの名前)」 HP:10
+         */
+    }
+    /*
+     * 一覧表示
+     */
     public static void show()
     {
         for(int i=0;i<PLAYERCNT;i++)
         {
             System.out.println("勇者："+(i+1)+":"+playerName[i]+" HP:"+playerHP[i]);
         }
-        /* 
+        
         for(int i=0;i<ENEMYCNT;i++)
         {
             System.out.println("モンスター："+(i+1)+":"+enemyName[i]+" HP:"+enemyHP[i]);
         }
-        */
+        
         return;
     }
     public static void summonPlayer()//勇者召喚
@@ -55,12 +91,28 @@ public class method_mondai2_1
     public static void summonEnemy()//モンスター召喚
     {
         //勇者召喚を見ながら作ってみてください
+        System.out.println("ーーモンスター召喚ーー");
+        enemyName=new String[ENEMYCNT];
+        enemyHP=new int[ENEMYCNT];
+        Scanner sc = new Scanner(System.in);
+        for(int i=0;i<ENEMYCNT;i++)
+        {
+            System.out.print((i+1)+"番目のモンスターの名前:");
+            String name = sc.next();
+            enemyName[i]=name;
+            enemyHP[i]=10;
+
+        }
+        for(int i=0;i<ENEMYCNT;i++)
+        {
+            System.out.println("名前："+enemyName[i]+"を召喚した");
+        }
     }
     public static void hello()
     {
         System.out.println("hello");
     }
-    /* 以下は今は気にしなくていいです。
+
     public static void field(String fieldname)
     {
         try{
@@ -94,5 +146,4 @@ public class method_mondai2_1
             }
             return;
         }
-    */
 }

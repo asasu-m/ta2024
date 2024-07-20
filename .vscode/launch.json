@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "method_mondai2_2",
+            "request": "launch",
+            "mainClass": "method_mondai2_2",
+            "projectName": "ta2024_dfd5994f"
+        },
+        {
+            "type": "java",
             "name": "method_mondai2_1",
             "request": "launch",
             "mainClass": "method_mondai2_1",
