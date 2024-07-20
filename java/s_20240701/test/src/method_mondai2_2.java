@@ -3,8 +3,10 @@ import java.util.Scanner;
 
 public class method_mondai2_2
 {
+    final static int ALL_DEAD=-1;//すべての敵が死んでいる
+    final static int ALLIVE=1;//生きている敵がいる
     //finalは変更できない値(定数)。値を変更しようとするとエラーになる
-    //mainメソッドを含むクラスの変数やメソッドは基本staticをつける。(mainメソッドの中以外で作成したもの)
+    //mainメソッドを含むクラスの変数やメソッドは基本staticをつける。(mainメソッドの中以外で作成したもの。
     final static int ENEMY_NUM=3;//敵の種類の数
     final static int PLAYER_NUM=4;//味方の種類の数
     final static int ENEMYCNT=1;//出現する敵の数
@@ -13,13 +15,15 @@ public class method_mondai2_2
     static String playerName[];//味方の名前
     static int playerHP[];//味方の体力
     static int enemyHP[];//敵の体力
+    static int enemy_shutugen_persent;//敵の出現確率(最低0-最高10)
+    static int playerXP[];
     public static void main(String[] args)
     {
         summonPlayer();
         summonEnemy();
         show();
-        field("平和な草原");
-
+        field("平和な草原",0);
+        field("荒野",5);
         return;
     }
     /*
@@ -27,23 +31,72 @@ public class method_mondai2_2
      */
     public static void battle()
     {
+        enemy_toujou();
         Scanner sc = new Scanner(System.in);
         System.out.println("モンスターが現れた!!");
-        while(true)
+        show();
+        System.out.print("1:攻撃. 2:逃げる");
+        int choice=sc.nextInt();
+        if(choice==1)
         {
-            show();
-            System.out.print("1:攻撃. 2:逃げる");
-            int choice=sc.nextInt();
-            if(choice==1)
+            while(true)
             {
                 enemyshow();
                 System.out.println("どのモンスターに攻撃しますか？");
-                
+                int enemySelect=sc.nextInt();
+                if(!(enemySelect>0&&enemySelect<=ENEMYCNT))
+                {
+                    System.out.println("勇者は攻撃を外してビビって逃げた。");
+                    break;
+                }
+                enemySelect--;
+                System.out.println("勇者の攻撃："+enemyName[enemySelect]+"に10ダメージ!!");
+                enemyHP[enemySelect]-=10;
+                if(check_All_DEAD_ENEMY()==ALL_DEAD)
+                {
+                    System.out.println("すべての敵を倒した");
+                    keikenti();
+                    System.out.println("ーー戦闘終了ーー");
+                    break;
+                }
+            }
 
+        }else if(choice==2)
+        {
+            System.out.println("勇者は逃げた。");
+        }
+        return;
+    }
+    public static void enemy_toujou()
+    {
+        for(int i=0;i<ENEMYCNT;i++)
+        {
+            enemyHP[i]=10;
+
+        }
+    }
+    public static void keikenti()
+    {
+        /*
+         * 勇者のパーティー全員に10経験値を足してください。
+         * 勇者のパーティ全員は繰り返しを使う
+         * for(int i=0;i<PLAYERCNT;i++)
+         * {
+         * }
+         */
+        System.out.println("勇者は10の経験値を得た。");
+        return;
+    }
+    public static int check_All_DEAD_ENEMY()
+    {
+        for(int i=0;i<ENEMYCNT;i++)
+        {
+            if(enemyHP[i]>0)
+            {
+                return ALLIVE;
             }
         }
-        
-
+        return ALL_DEAD;
     }
     public static void enemyshow()
     {
@@ -74,6 +127,9 @@ public class method_mondai2_2
         System.out.println("ーー勇者召喚ーー");
         playerName=new String[PLAYERCNT];
         playerHP=new int[PLAYERCNT];
+        //追加
+        playerXP=new int[PLAYERCNT];
+        //
         Scanner sc = new Scanner(System.in);
         for(int i=0;i<PLAYERCNT;i++)
         {
@@ -81,6 +137,9 @@ public class method_mondai2_2
             String name = sc.next();
             playerName[i]=name;
             playerHP[i]=10;
+            //追加
+            playerXP[i]=0;
+            //
 
         }
         for(int i=0;i<PLAYERCNT;i++)
@@ -113,7 +172,7 @@ public class method_mondai2_2
         System.out.println("hello");
     }
 
-    public static void field(String fieldname)
+    public static void field(String fieldname,int syutugenkakuritu)
     {
         try{
             System.out.println("勇者一行は"+fieldname+"に到着した");
@@ -125,6 +184,12 @@ public class method_mondai2_2
             {
                 cnt++;
                 walk();
+                Random rnd = new Random();
+                int kakuritu=rnd.nextInt(10);
+                if(syutugenkakuritu>kakuritu)
+                {
+                    battle();
+                }
                 if(cnt>=10)
                 {
                     break;
