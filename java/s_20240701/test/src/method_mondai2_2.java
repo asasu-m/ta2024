@@ -9,7 +9,9 @@ public class method_mondai2_2
     //mainメソッドを含むクラスの変数やメソッドは基本staticをつける。(mainメソッドの中以外で作成したもの。
     final static int ENEMY_NUM=3;//敵の種類の数
     final static int PLAYER_NUM=4;//味方の種類の数
-    final static int ENEMYCNT=1;//出現する敵の数
+    //変更点
+    final static int ENEMYCNT=2;//出現する敵の数
+    //
     final static int PLAYERCNT=1;//出現する味方の数(主人公含む)
     static String enemyName[];//敵の名前
     static String playerName[];//味方の名前
