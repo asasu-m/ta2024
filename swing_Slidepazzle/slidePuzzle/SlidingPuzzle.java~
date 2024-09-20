@@ -1,0 +1,9 @@
+import javax.swing.*;
+import java.awt.event.*;
+import java.text.DecimalFormat;
+
+public class SlidingPuzzle{
+    private static final int WIDTH = 256+16; //画面横幅
+    private static final int HEIGHT = 256+38;//画面縦幅
+
+}
